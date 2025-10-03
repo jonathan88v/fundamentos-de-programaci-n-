@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main()
+{
+    float gramos;
+
+
+    printf("Ingresar el peso en gramos\n");
+    scanf("%f", &gramos);
+
+    if (gramos>0 && gramos <50)
+    {
+        printf("Cuesta Bs1.50");
+    }
+else if ( gramos>= 50 && gramos<= 100)
+{
+    printf("Cuesta Bs 4");
+}
+else if (gramos>100 && gramos<= 200)
+{
+    printf("Cuesta Bs 6");
+
+}
+else if (gramos>200 && gramos <=350)
+{
+
+printf("Cuesta Bs 10.50");
+}
+else if (gramos >350 && gramos <=500)
+{
+    printf("Cuesta Bs 15");
+}
+else
+ {
+    printf("No puede enviar como carta");
+}
+
+
+    return 0;
+}
