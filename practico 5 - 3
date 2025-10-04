@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    int unidades, decenas, centenas, millares;
+
+    printf("Ingrese un numero entero positivo menor que 10000: ");
+    scanf("%d", &n);
+
+    if (n < 0 || n >= 10000) {
+        printf("El numero no es valido.\n");
+        return 1;
+    }
+
+    // Desglose del número
+    unidades = n % 10;          // Último dígito
+    decenas = (n / 10) % 10;    // Segundo dígito desde la derecha
+    centenas = (n / 100) % 10;  // Tercer dígito
+    millares = (n / 1000) % 10; // Cuarto dígito
+
+    printf("Millares: %d\n", millares);
+    printf("Centenas: %d\n", centenas);
+    printf("Decenas: %d\n", decenas);
+    printf("Unidades: %d\n", unidades);
+
+    return 0;
+}
