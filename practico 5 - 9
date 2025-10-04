@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    float a1, b1, c1;
+    float a2, b2, c2;
+    float D, Dx, Dy, x, y;
+
+    printf("Resolviendo el sistema:\n");
+    printf("a1*x + b1*y = c1\n");
+    printf("a2*x + b2*y = c2\n\n");
+
+    // Ingreso de coeficientes
+    printf("Ingrese a1, b1 y c1: ");
+    scanf("%f %f %f", &a1, &b1, &c1);
+
+    printf("Ingrese a2, b2 y c2: ");
+    scanf("%f %f %f", &a2, &b2, &c2);
+
+    // Determinante principal
+    D = a1 * b2 - a2 * b1;
+
+    if (D == 0) {
+        printf("El sistema no tiene solucion unica (puede ser sin solucion o con infinitas soluciones).\n");
+    } else {
+        // Determinantes de Cramer
+        Dx = c1 * b2 - c2 * b1;
+        Dy = a1 * c2 - a2 * c1;
+
+        x = Dx / D;
+        y = Dy / D;
+
+        printf("Solucion: x = %.2f, y = %.2f\n", x, y);
+    }
+
+    return 0;
+}
