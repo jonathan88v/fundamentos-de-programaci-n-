@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+int main() 
+{
+    int orden1 = 0, orden2 = 0, orden3 = 0, ordenT = 0;
+    int op, n;
+        // Mostrar menú
+        printf("\n** MENU **\n");
+        printf("1.- Hamburguesa 10 Bs\n");
+        printf("2.- Papas fritas 3 Bs\n");
+        printf("3.- Soda 6 Bs\n");
+        printf("4.- Total\n");
+        printf("5.- Salir\n");
+
+    do {
+
+        printf("\nSeleccione una opción: ");
+        if (scanf("%d", &op) != 1) 
+        {
+            printf("Entrada invalida. Saliendo.\n");
+            return 1;
+        }
+
+        switch (op) 
+        {
+            case 1:
+                printf("Ingrese la cantidad de hamburguesas: ");
+                if (scanf("%d", &n) != 1) { printf("Entrada invalida.\n"); return 1; }
+                if (n < 0) { printf("Cantidad no valida.\n"); break; }
+                orden1 += n * 10;
+                printf("Su orden de hamburguesas es de %d Bs\n", orden1);
+                break;
+
+            case 2:
+                printf("Ingrese la cantidad de papas fritas: ");
+                if (scanf("%d", &n) != 1) { printf("Entrada invalida.\n"); return 1; }
+                if (n < 0) { printf("Cantidad no valida.\n"); break; }
+                orden2 += n * 3;
+                printf("Su orden de papas fritas es de %d Bs\n", orden2);
+                break;
+
+            case 3:
+                printf("Ingrese la cantidad de sodas: ");
+                if (scanf("%d", &n) != 1) { printf("Entrada invalida.\n"); return 1; }
+                if (n < 0) { printf("Cantidad no valida.\n"); break; }
+                orden3 += n * 6;
+                printf("Su orden de sodas es de %d Bs\n", orden3);
+                break;
+
+            case 4:
+                ordenT = orden1 + orden2 + orden3;
+                printf("El total de su pedido es: %d Bs\n", ordenT);
+                break;
+
+            case 5:
+                printf("Gracias por su compra. Vuelva pronto.\n");
+                break;
+
+            default:
+                printf("Opción no válida. Intente de nuevo.\n");
+                break;
+        }
+
+    } while (op != 5);
+
+    return 0;
+}
