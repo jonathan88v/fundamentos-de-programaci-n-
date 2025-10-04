@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int h1, m1, h2, m2;
+    int minutos1, minutos2, diferencia;
+    int horas, minutos;
+
+    printf("Ingrese la primera hora (HH:MM): ");
+    scanf("%d:%d", &h1, &m1);
+
+    printf("Ingrese la segunda hora (HH:MM): ");
+    scanf("%d:%d", &h2, &m2);
+
+    // Convertimos ambas horas a minutos totales desde las 00:00
+    minutos1 = h1 * 60 + m1;
+    minutos2 = h2 * 60 + m2;
+
+    // Calculamos la diferencia
+    diferencia = minutos2 - minutos1;
+
+    // Si la diferencia es negativa significa que la segunda hora es del día siguiente
+    if (diferencia < 0) {
+        diferencia += 24 * 60;  // sumamos un día en minutos
+    }
+
+    // Pasamos la diferencia a horas y minutos
+    horas = diferencia / 60;
+    minutos = diferencia % 60;
+
+    printf("Tiempo transcurrido: %d:%02d horas\n", horas, minutos);
+
+    return 0;
+}
